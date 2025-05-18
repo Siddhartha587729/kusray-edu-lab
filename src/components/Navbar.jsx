@@ -37,8 +37,10 @@ export default function Navbar() {
     <nav className="bg-white py-4 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-slate-700 text-2xl font-bold">
-          Kus<span className="text-[#42B4E6]">ray</span>
+        <Link to="/" className="flex gap-2 text-slate-700 text-2xl font-bold">
+          <img src="/logo.svg" alt="" className='h-8 w-8'/>
+          <span>Kus<span className="text-[#42B4E6]">ray</span></span>
+          <span>Edu<span className="text-[#42B4E6]">Lab</span></span>
         </Link>
 
         {/* Desktop Navigation */}

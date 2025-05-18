@@ -66,9 +66,9 @@ export default function Home() {
         <Features />
       </div>
       
-      <div ref={projectsRef} id="projects">
+      {/* <div ref={projectsRef} id="projects">
         <ProjectShowcase />
-      </div>
+      </div> */}
       
       <div ref={coursesRef} id="courses">
         <Courses />
