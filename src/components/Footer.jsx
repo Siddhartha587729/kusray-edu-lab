@@ -8,11 +8,11 @@ export default function Footer() {
     {
       title: 'Courses',
       links: [
-        { name: 'Web Development', href: '/under-construction' },
-        { name: 'Data Science', href: '/under-construction' },
-        { name: 'UI/UX Design', href: '/under-construction' },
-        { name: 'Digital Marketing', href: '/under-construction' },
-        { name: 'Mobile Development', href: '/under-construction' },
+        { name: 'Web Development', href: '/#courses', isInternal: true },
+        { name: 'Data Science', href: '/#courses', isInternal: true },
+        { name: 'UI/UX Design', href: '/#courses', isInternal: true },
+        { name: 'Digital Marketing', href: '/#courses', isInternal: true },
+        { name: 'Mobile Development', href: '/#courses', isInternal: true },
       ],
     },
     {
@@ -20,19 +20,7 @@ export default function Footer() {
       links: [
         { name: 'About Us', href: '/under-construction' },
         { name: 'Our Team', href: '/under-construction' },
-        { name: 'Careers', href: '/under-construction' },
-        { name: 'Press', href: '/under-construction' },
-        { name: 'Blog', href: '/under-construction' },
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Student Stories', href: '/under-construction' },
-        { name: 'Industry Partners', href: '/under-construction' },
-        { name: 'College Resources', href: '/under-construction' },
-        { name: 'Events', href: '/under-construction' },
-        { name: 'FAQs', href: '/under-construction' },
+        { name: 'Careers', href: '/careers' },
       ],
     },
     {
@@ -40,15 +28,14 @@ export default function Footer() {
       links: [
         { name: 'Email: reachus@kusray.com', href: 'mailto:reachus@kusray.com' },
         { name: 'Phone: +91 8249482933', href: 'tel:+918249482933' },
+        { name: 'Near Akshardham Metro Station', href: '/#contact', isInternal: true },
         { name: 'C 267, Ground Floor, Pandav Nagar', href: '/#contact', isInternal: true },
         { name: 'New Delhi 110092', href: '/#contact', isInternal: true },
       ],
     },
   ];
   
-  // Handle smooth scrolling for internal links
   const handleInternalLinkClick = (e, href) => {
-    // If it's a hash link and we're on the homepage
     if (href.includes('#') && location.pathname === '/') {
       e.preventDefault();
       const id = href.split('#')[1];
@@ -65,16 +52,14 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#2C3E50] text-white">
-      {/* Main Footer */}
       <div className="py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {/* Logo and Info */}
-            <div className="lg:col-span-1">
-              <Link to="/" className="text-2xl font-bold mb-4 block">
+          <div className="flex flex-col lg:flex-row gap-8">
+            <div className="w-full lg:w-1/4">
+              <a href="https://kusray.in" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold mb-4 block">
                 Kus<span className="text-[#42B4E6]">ray</span>
-              </Link>
-              <p className="text-[#B0BEC5] mb-4">
+              </a>
+              <p className="text-[#B0BEC5] mb-4 w-full lg:w-[70%]">
                 Empowering students through industry-aligned tech education and real-world projects.
               </p>
               <div className="flex space-x-4 mb-6">
@@ -101,46 +86,46 @@ export default function Footer() {
               </div>
             </div>
             
-            {/* Links Sections */}
-            {footerLinks.map((section, index) => (
-              <div key={index} className="lg:col-span-1">
-                <h3 className="text-lg font-bold mb-4 text-white">{section.title}</h3>
-                <ul className="space-y-2">
-                  {section.links.map((link, idx) => (
-                    <li key={idx}>
-                      {link.isInternal ? (
-                        <Link 
-                          to={link.href} 
-                          className="text-[#B0BEC5] hover:text-[#42B4E6] transition-colors"
-                          onClick={(e) => handleInternalLinkClick(e, link.href)}
-                        >
-                          {link.name}
-                        </Link>
-                      ) : link.href.startsWith('mailto:') || link.href.startsWith('tel:') ? (
-                        <a 
-                          href={link.href} 
-                          className="text-[#B0BEC5] hover:text-[#42B4E6] transition-colors"
-                        >
-                          {link.name}
-                        </a>
-                      ) : (
-                        <Link 
-                          to={link.href} 
-                          className="text-[#B0BEC5] hover:text-[#42B4E6] transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {footerLinks.map((section, index) => (
+                <div key={index}>
+                  <h3 className="text-lg font-bold mb-4 text-white">{section.title}</h3>
+                  <ul className="space-y-2">
+                    {section.links.map((link, idx) => (
+                      <li key={idx}>
+                        {link.isInternal ? (
+                          <Link 
+                            to={link.href} 
+                            className="text-[#B0BEC5] hover:text-[#42B4E6] transition-colors"
+                            onClick={(e) => handleInternalLinkClick(e, link.href)}
+                          >
+                            {link.name}
+                          </Link>
+                        ) : link.href.startsWith('mailto:') || link.href.startsWith('tel:') ? (
+                          <a 
+                            href={link.href} 
+                            className="text-[#B0BEC5] hover:text-[#42B4E6] transition-colors"
+                          >
+                            {link.name}
+                          </a>
+                        ) : (
+                          <Link 
+                            to={link.href} 
+                            className="text-[#B0BEC5] hover:text-[#42B4E6] transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
       
-      {/* Bottom Footer */}
       <div className="py-4 border-t border-[#3D5366]">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
           <p className="text-[#B0BEC5] text-sm mb-2 md:mb-0">

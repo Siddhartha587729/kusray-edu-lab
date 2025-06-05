@@ -95,7 +95,6 @@ export default function Courses() {
             Specialized training programs with details on duration, mode (online/offline/hybrid), curriculum highlights, and certification.
           </p>
           
-          {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {categories.map((category) => (
               <button

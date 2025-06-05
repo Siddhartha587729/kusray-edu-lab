@@ -88,7 +88,6 @@ export default function ProjectShowcase() {
             Dynamic gallery of student projects with ratings and GitHub links, showcasing the real-world impact of our programs.
           </p>
           
-          {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {categories.map((category) => (
               <button

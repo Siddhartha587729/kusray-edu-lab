@@ -47,7 +47,6 @@ export default function Hero() {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <div className="relative">
-              {/* Main image */}
               <div className="w-full max-w-md rounded-lg overflow-hidden shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGVkdWNhdGlvbiUyMHRlY2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" 
@@ -56,7 +55,6 @@ export default function Hero() {
                 />
               </div>
               
-              {/* Floating elements */}
               <div className="absolute -top-4 -left-4 bg-[#0072BC] text-white p-3 rounded-lg shadow-lg">
                 <div className="text-xs uppercase font-bold">Success Rate</div>
                 <div className="text-2xl font-bold">94%</div>
@@ -71,7 +69,6 @@ export default function Hero() {
         </div>
       </div>
       
-      {/* Wave SVG separator */}
       <div className="absolute bottom-0 left-0 right-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full">
           <path 

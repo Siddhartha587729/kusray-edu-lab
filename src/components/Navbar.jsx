@@ -6,10 +6,18 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    setIsMenuOpen(false);
+  };
+
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '/#features' },
-    { name: 'Projects', href: '/#projects' },
+    /*{ name: 'Projects', href: '/#projects' },*/    
     { name: 'Courses', href: '/#courses' },
     { name: 'Mentors', href: '/#mentors' },
     { name: 'Partnerships', href: '/#partnerships' },
@@ -17,7 +25,12 @@ export default function Navbar() {
   ];
 
   const handleLinkClick = (e, href) => {
-    // If it's a hash link and we're on the homepage
+    if (href === '/') {
+      e.preventDefault();
+      scrollToTop();
+      return;
+    }
+    
     if (href.includes('#') && location.pathname === '/') {
       e.preventDefault();
       const id = href.split('#')[1];
@@ -36,14 +49,12 @@ export default function Navbar() {
   return (
     <nav className="bg-white py-4 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
         <Link to="/" className="flex gap-2 text-slate-700 text-2xl font-bold">
           <img src="/logo.svg" alt="" className='h-8 w-8'/>
           <span>Kus<span className="text-[#42B4E6]">ray</span></span>
           <span>Edu<span className="text-[#42B4E6]">Lab</span></span>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
             <Link 
@@ -57,16 +68,14 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA Button */}
         <div className="hidden md:block">
-          <Link to="/under-construction">
+          <Link to="/#contact" onClick={(e) => handleLinkClick(e, link.href)}>
             <Button variant="primary" size="sm">
               Get Started
             </Button>
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
         <button 
           className="md:hidden text-slate-700"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -83,7 +92,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 mt-2 py-3">
           <div className="container mx-auto px-4 flex flex-col space-y-3">
@@ -101,7 +109,10 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-2">
-              <Link to="/under-construction">
+              <Link to="/#contact" onClick={(e) => {
+                  handleLinkClick(e, link.href);
+                  setIsMenuOpen(false);
+                }}>
                 <Button variant="primary" size="sm" className="w-full">
                   Get Started
                 </Button>

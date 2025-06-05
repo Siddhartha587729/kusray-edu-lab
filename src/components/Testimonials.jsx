@@ -71,7 +71,6 @@ export default function Testimonials() {
         
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-[#F5F7FA] rounded-lg p-6 md:p-10 shadow-lg">
-            {/* Quote icon */}
             <div className="absolute top-6 left-6 md:top-10 md:left-10">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#0072BC] opacity-10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -114,7 +113,6 @@ export default function Testimonials() {
               </div>
             </div>
             
-            {/* Navigation Arrows */}
             <div className="flex justify-center mt-8 md:mt-10 gap-4">
               <button 
                 onClick={prevTestimonial} 
@@ -152,12 +150,10 @@ export default function Testimonials() {
           </div>
         </div>
         
-        {/* College Partnerships */}
         <div className="mt-20 text-center">
           <h3 className="text-xl md:text-2xl font-bold text-[#2C3E50] mb-8">Trusted by Leading Institutions</h3>
           
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-            {/* Example college logos - replace with actual logos */}
             <div className="flex flex-col items-center">
               <div className="w-20 h-20 bg-[#FFFFFF] rounded-full shadow-md flex items-center justify-center p-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-full w-full text-[#0072BC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">

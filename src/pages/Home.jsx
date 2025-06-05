@@ -4,24 +4,20 @@ import Features from '../components/Features';
 import ProjectShowcase from '../components/ProjectShowcase';
 import Courses from '../components/Courses';
 import Mentors from '../components/Mentors';
-import Leaderboard from '../components/Leaderboard';
 import Testimonials from '../components/Testimonials';
 import Partnerships from '../components/Partnerships';
 import Contact from '../components/Contact';
 
 export default function Home() {
-  // Refs for scrolling to sections
   const heroRef = useRef(null);
   const featuresRef = useRef(null);
   const projectsRef = useRef(null);
   const coursesRef = useRef(null);
   const mentorsRef = useRef(null);
-  const leaderboardRef = useRef(null);
   const testimonialsRef = useRef(null);
   const partnershipsRef = useRef(null);
   const contactRef = useRef(null);
 
-  // Make refs available globally for navigation
   useEffect(() => {
     window.sectionRefs = {
       hero: heroRef,
@@ -29,7 +25,6 @@ export default function Home() {
       projects: projectsRef,
       courses: coursesRef,
       mentors: mentorsRef,
-      leaderboard: leaderboardRef,
       testimonials: testimonialsRef,
       partnerships: partnershipsRef,
       contact: contactRef
@@ -52,7 +47,6 @@ export default function Home() {
 
   return (
     <div className="bg-[#F5F7FA] min-h-screen">
-      {/* Scroll Progress Bar */}
       <div 
         className="fixed top-0 left-0 h-1 bg-[#42B4E6] z-50 transition-all duration-300"
         style={{ width: `${scrollProgress}%` }}
@@ -78,10 +72,6 @@ export default function Home() {
         <Mentors />
       </div>
       
-      <div ref={leaderboardRef} id="leaderboard">
-        <Leaderboard />
-      </div>
-      
       <div ref={testimonialsRef} id="testimonials">
         <Testimonials />
       </div>
@@ -94,7 +84,6 @@ export default function Home() {
         <Contact />
       </div>
       
-      {/* Back to top button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className={`fixed bottom-6 right-6 p-3 rounded-full bg-[#0072BC] text-white shadow-lg transition-opacity duration-300 hover:bg-[#005B96] ${

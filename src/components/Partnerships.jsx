@@ -1,36 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 import Card from './Card';
 
 export default function Partnerships() {
-  const [calculatedROI, setCalculatedROI] = useState(null);
-  
-  // Mock ROI calculation function
-  const calculateROI = (students) => {
-    const avgEarningsIncrease = 15000; // $15,000 per year
-    const placementRate = 0.85; // 85%
-    const programCost = 3500; // $3500 per student
-    
-    const totalInvestment = students * programCost;
-    const studentsPlaced = Math.round(students * placementRate);
-    const totalEarningsIncrease = studentsPlaced * avgEarningsIncrease;
-    const roi = (totalEarningsIncrease / totalInvestment) * 100;
-    
-    return {
-      totalInvestment,
-      studentsPlaced,
-      totalEarningsIncrease,
-      roi: roi.toFixed(0)
-    };
-  };
-  
-  const handleCalculate = (e) => {
-    e.preventDefault();
-    const students = parseInt(e.target.students.value) || 100;
-    setCalculatedROI(calculateROI(students));
-  };
-  
   const steps = [
     {
       number: 1,
@@ -102,72 +74,6 @@ export default function Partnerships() {
           </div>
         </div>
         
-        {/* ROI Calculator */}
-        <div className="bg-[#F5F7FA] rounded-lg p-8 mb-16 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-[#005B96] mb-6 text-center">ROI Calculator</h3>
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/2">
-              <form onSubmit={handleCalculate} className="space-y-4">
-                <div>
-                  <label htmlFor="students" className="block text-[#2C3E50] font-medium mb-2">
-                    Number of Students per Year
-                  </label>
-                  <input
-                    type="number"
-                    id="students"
-                    name="students"
-                    defaultValue={100}
-                    min={10}
-                    max={2000}
-                    className="w-full p-3 border border-[#CFD8DC] rounded-md focus:outline-none focus:ring-2 focus:ring-[#0072BC]"
-                  />
-                </div>
-                <Button variant="primary" className="w-full" type="submit">
-                  Calculate ROI
-                </Button>
-              </form>
-            </div>
-            <div className="md:w-1/2">
-              {calculatedROI ? (
-                <div className="space-y-4">
-                  <div className="bg-[#FFFFFF] p-4 rounded-md border-l-4 border-[#0072BC]">
-                    <p className="text-sm text-[#2C3E50] mb-1">Total Investment</p>
-                    <p className="text-xl font-bold text-[#2C3E50]">
-                      ${calculatedROI.totalInvestment.toLocaleString()}
-                    </p>
-                  </div>
-                  <div className="bg-[#FFFFFF] p-4 rounded-md border-l-4 border-[#0072BC]">
-                    <p className="text-sm text-[#2C3E50] mb-1">Students Placed</p>
-                    <p className="text-xl font-bold text-[#2C3E50]">
-                      {calculatedROI.studentsPlaced} students
-                    </p>
-                  </div>
-                  <div className="bg-[#FFFFFF] p-4 rounded-md border-l-4 border-[#0072BC]">
-                    <p className="text-sm text-[#2C3E50] mb-1">Total Earnings Increase</p>
-                    <p className="text-xl font-bold text-[#2C3E50]">
-                      ${calculatedROI.totalEarningsIncrease.toLocaleString()}
-                    </p>
-                  </div>
-                  <div className="bg-[#42B4E6] p-4 rounded-md text-white">
-                    <p className="text-sm mb-1">Estimated ROI</p>
-                    <p className="text-3xl font-bold">
-                      {calculatedROI.roi}%
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center h-full text-[#2C3E50] p-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-[#CFD8DC] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-center">Enter the number of students and click calculate to see the potential ROI of partnering with Kusray.</p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-        
-        {/* CTA */}
         <div className="text-center">
           <Link to="/under-construction">
             <Button variant="primary" size="lg">

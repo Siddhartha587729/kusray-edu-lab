@@ -139,16 +139,6 @@ export default function Mentors() {
             </Card>
           ))}
         </div>
-        
-        <div className="bg-[#F5F7FA] rounded-lg p-8 text-center max-w-3xl mx-auto">
-          <h3 className="text-xl md:text-2xl font-bold text-[#2C3E50] mb-2">Become a Mentor</h3>
-          <p className="text-[#2C3E50] mb-6">
-            Share your expertise, guide the next generation of tech professionals, and expand your network.
-          </p>
-          <Button variant="primary">
-            Apply to be a Mentor
-          </Button>
-        </div>
       </div>
     </section>
   );

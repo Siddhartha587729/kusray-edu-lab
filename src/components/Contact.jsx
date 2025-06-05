@@ -3,7 +3,6 @@ import Button from './Button';
 export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic would go here
     alert('Form submitted! This would connect to your backend in a real application.');
   };
 
@@ -113,7 +112,7 @@ export default function Contact() {
                     <h4 className="text-lg font-semibold text-white mb-1">Our Location</h4>
                     <p className="opacity-90">
                       C 267, Ground Floor, Pandav Nagar<br />
-                      Near Aksh Cardham Metro Station<br />
+                      Near Akshardham Metro Station<br />
                       New Delhi 110092
                     </p>
                   </div>
