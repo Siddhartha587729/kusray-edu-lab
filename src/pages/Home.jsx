@@ -3,8 +3,6 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import ProjectShowcase from '../components/ProjectShowcase';
 import Courses from '../components/Courses';
-import Mentors from '../components/Mentors';
-import Testimonials from '../components/Testimonials';
 import Partnerships from '../components/Partnerships';
 import Contact from '../components/Contact';
 
@@ -13,8 +11,6 @@ export default function Home() {
   const featuresRef = useRef(null);
   const projectsRef = useRef(null);
   const coursesRef = useRef(null);
-  const mentorsRef = useRef(null);
-  const testimonialsRef = useRef(null);
   const partnershipsRef = useRef(null);
   const contactRef = useRef(null);
 
@@ -24,8 +20,6 @@ export default function Home() {
       features: featuresRef,
       projects: projectsRef,
       courses: coursesRef,
-      mentors: mentorsRef,
-      testimonials: testimonialsRef,
       partnerships: partnershipsRef,
       contact: contactRef
     };
@@ -66,14 +60,6 @@ export default function Home() {
       
       <div ref={coursesRef} id="courses">
         <Courses />
-      </div>
-      
-      <div ref={mentorsRef} id="mentors">
-        <Mentors />
-      </div>
-      
-      <div ref={testimonialsRef} id="testimonials">
-        <Testimonials />
       </div>
       
       <div ref={partnershipsRef} id="partnerships">

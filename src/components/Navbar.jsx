@@ -19,7 +19,6 @@ export default function Navbar() {
     { name: 'Features', href: '/#features' },
     /*{ name: 'Projects', href: '/#projects' },*/    
     { name: 'Courses', href: '/#courses' },
-    { name: 'Mentors', href: '/#mentors' },
     { name: 'Partnerships', href: '/#partnerships' },
     { name: 'Contact', href: '/#contact' },
   ];
